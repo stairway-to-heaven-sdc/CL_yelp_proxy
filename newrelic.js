@@ -7,7 +7,6 @@
  */
 exports.config = {
     /**
-     * Array of application names.
      */
     app_name: ['Priya Proxy Service'],
     /**

@@ -1,5 +1,5 @@
-const express = require('express');
 const nr = require('newrelic');
+const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const cors = require('cors');
@@ -18,9 +18,11 @@ app.use(express.static(`${__dirname}/../public`));
 // /**photo service */
 // app.use('/biz_photos', proxy({target: process.env.Biz, changeOrigin: true}));
 /**review service */
-app.use('/reviews', proxy({ target: "http://localhost:3002", changeOrigin: true }));
+app.use('/reviews', proxy({ target: "http://ec2-3-82-56-93.compute-1.amazonaws.com:3002", changeOrigin: true }));
 /**user service */
-app.use('/user/', proxy({ target: "http://localhost:3002", changeOrigin: true }));
+app.use('/user/', proxy({ target: "http://ec2-3-82-56-93.compute-1.amazonaws.com:3002", changeOrigin: true }));
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
 });
+
+
